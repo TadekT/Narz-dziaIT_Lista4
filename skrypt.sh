@@ -8,3 +8,8 @@ if [ "$1" == "--logs" ]; then
   done
 fi
 
+if [ "$1" == "--logs" ] && [ -n "$2" ]; then
+  for ((i=1; i<=$2; i++)); do
+    echo "File number: $i, Created by: skrypt.sh, Date: $(date)" > log_$i.txt
+  done
+fi
